@@ -4,7 +4,7 @@
   import path from 'path';
 
   export default defineConfig({
-  base: '/Hackerportfolio/', 
+  base: './', 
   // the rest of your code stays the same...
     plugins: [react()],
     resolve: {
