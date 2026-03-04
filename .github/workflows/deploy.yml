@@ -20,10 +20,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          # Removed the cache: 'npm' line to prevent the lock file error
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --no-package-lock
+        # Added --no-package-lock to bypass the missing lock file issue
 
       - name: Build
         run: npm run build
@@ -34,6 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # This must match the outDir in your vite.config.ts
           path: './dist'
 
       - name: Deploy to GitHub Pages
