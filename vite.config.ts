@@ -4,6 +4,8 @@
   import path from 'path';
 
   export default defineConfig({
+  base: '/Hackerportfolio/', 
+  // the rest of your code stays the same...
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
